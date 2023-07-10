@@ -58,44 +58,101 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form3.cs">
+    <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form3.Designer.cs">
+    <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form4.cs">
+    <Compile Include="Forms\ADMIN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form4.Designer.cs">
-      <DependentUpon>Form4.cs</DependentUpon>
+    <Compile Include="Forms\ADMIN.Designer.cs">
+      <DependentUpon>ADMIN.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form5.cs">
+    <Compile Include="Forms\BUS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form5.Designer.cs">
-      <DependentUpon>Form5.cs</DependentUpon>
+    <Compile Include="Forms\BUS.Designer.cs">
+      <DependentUpon>BUS.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form6.cs">
+    <Compile Include="Forms\GUDANG.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form6.Designer.cs">
-      <DependentUpon>Form6.cs</DependentUpon>
+    <Compile Include="Forms\GUDANG.Designer.cs">
+      <DependentUpon>GUDANG.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Form7.cs">
+    <Compile Include="Forms\PENYEWA.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form7.Designer.cs">
-      <DependentUpon>Form7.cs</DependentUpon>
+    <Compile Include="Forms\PENYEWA.Designer.cs">
+      <DependentUpon>PENYEWA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SUPIR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SUPIR.Designer.cs">
+      <DependentUpon>SUPIR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relasi\KONDISI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relasi\KONDISI.Designer.cs">
+      <DependentUpon>KONDISI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relasi\PENJADWALAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relasi\PENJADWALAN.Designer.cs">
+      <DependentUpon>PENJADWALAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relasi\REGISTRASI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relasi\REGISTRASI.Designer.cs">
+      <DependentUpon>REGISTRASI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relasi\TRANSAKSI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relasi\TRANSAKSI.Designer.cs">
+      <DependentUpon>TRANSAKSI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThemeColor.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ADMIN.resx">
+      <DependentUpon>ADMIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BUS.resx">
+      <DependentUpon>BUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GUDANG.resx">
+      <DependentUpon>GUDANG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PENYEWA.resx">
+      <DependentUpon>PENYEWA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SUPIR.resx">
+      <DependentUpon>SUPIR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,7 +162,20 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Relasi\KONDISI.resx">
+      <DependentUpon>KONDISI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relasi\PENJADWALAN.resx">
+      <DependentUpon>PENJADWALAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relasi\REGISTRASI.resx">
+      <DependentUpon>REGISTRASI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relasi\TRANSAKSI.resx">
+      <DependentUpon>TRANSAKSI.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,6 +189,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\silang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross-out %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data-spreadsheet.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\up-and-down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left-arrow.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

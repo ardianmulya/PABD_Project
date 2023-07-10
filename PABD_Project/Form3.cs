@@ -4,20 +4,20 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PABD_Project
 {
-        public partial class Form2 : Form
+    public partial class Form3 : Form
     {
+
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        public Form2()
+        public Form3()
         {
             InitializeComponent();
             random = new Random();
@@ -80,8 +80,8 @@ namespace PABD_Project
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            this.panelDesktopPane.Controls.Add(childForm);
-            this.panelDesktopPane.Tag = childForm;
+            this.panel1.Controls.Add(childForm);
+            this.panel1.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
             Title.Text = childForm.Text;
@@ -89,27 +89,22 @@ namespace PABD_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.ADMIN(), sender);
+            OpenChildForm(new Relasi.REGISTRASI(), sender);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.BUS(), sender);
+            OpenChildForm(new Relasi.TRANSAKSI(), sender);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.PENYEWA(), sender);
+            OpenChildForm(new Relasi.KONDISI(), sender);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.GUDANG(), sender);
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new Forms.SUPIR(), sender);
+            OpenChildForm(new Relasi.PENJADWALAN(), sender);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

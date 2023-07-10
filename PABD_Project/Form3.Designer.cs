@@ -1,6 +1,6 @@
 ﻿namespace PABD_Project
 {
-    partial class Form2
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.
@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.JUDUL = new System.Windows.Forms.Label();
-            this.Title = new System.Windows.Forms.Label();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.CLOSE = new System.Windows.Forms.Button();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.Title = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -49,7 +48,6 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.button5);
             this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.button2);
@@ -58,23 +56,8 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 522);
-            this.panelMenu.TabIndex = 0;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.Location = new System.Drawing.Point(0, 320);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(220, 60);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "SUPIR";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.panelMenu.Size = new System.Drawing.Size(220, 558);
+            this.panelMenu.TabIndex = 1;
             // 
             // button4
             // 
@@ -87,7 +70,7 @@
             this.button4.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(220, 60);
             this.button4.TabIndex = 4;
-            this.button4.Text = "GUDANG";
+            this.button4.Text = "PENJADWALAN";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -102,7 +85,7 @@
             this.button3.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(220, 60);
             this.button3.TabIndex = 3;
-            this.button3.Text = "PENYEWA";
+            this.button3.Text = "KONDISI";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -117,7 +100,7 @@
             this.button2.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(220, 60);
             this.button2.TabIndex = 2;
-            this.button2.Text = "BUS";
+            this.button2.Text = "TRANSAKSI";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -132,7 +115,7 @@
             this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(220, 60);
             this.button1.TabIndex = 1;
-            this.button1.Text = "ADMIN";
+            this.button1.Text = "REGITRASI";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -153,21 +136,23 @@
             this.JUDUL.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.JUDUL.Location = new System.Drawing.Point(64, 27);
             this.JUDUL.Name = "JUDUL";
-            this.JUDUL.Size = new System.Drawing.Size(103, 26);
+            this.JUDUL.Size = new System.Drawing.Size(91, 26);
             this.JUDUL.TabIndex = 10;
-            this.JUDUL.Text = "MASTER";
+            this.JUDUL.Text = "RELASI";
             // 
-            // Title
+            // CLOSE
             // 
-            this.Title.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Title.AutoSize = true;
-            this.Title.Font = new System.Drawing.Font("Mongolian Baiti", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Title.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Title.Location = new System.Drawing.Point(441, 27);
-            this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(99, 30);
-            this.Title.TabIndex = 1;
-            this.Title.Text = "HOME";
+            this.CLOSE.Dock = System.Windows.Forms.DockStyle.Right;
+            this.CLOSE.FlatAppearance.BorderSize = 0;
+            this.CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CLOSE.Image = global::PABD_Project.Properties.Resources.left_arrow;
+            this.CLOSE.Location = new System.Drawing.Point(689, 0);
+            this.CLOSE.Name = "CLOSE";
+            this.CLOSE.Size = new System.Drawing.Size(173, 80);
+            this.CLOSE.TabIndex = 3;
+            this.CLOSE.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CLOSE.UseVisualStyleBackColor = true;
+            this.CLOSE.Click += new System.EventHandler(this.CLOSE_Click);
             // 
             // panelTitleBar
             // 
@@ -178,30 +163,8 @@
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(948, 80);
-            this.panelTitleBar.TabIndex = 2;
-            // 
-            // panelDesktopPane
-            // 
-            this.panelDesktopPane.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktopPane.Location = new System.Drawing.Point(220, 80);
-            this.panelDesktopPane.Name = "panelDesktopPane";
-            this.panelDesktopPane.Size = new System.Drawing.Size(948, 442);
-            this.panelDesktopPane.TabIndex = 3;
-            // 
-            // CLOSE
-            // 
-            this.CLOSE.Dock = System.Windows.Forms.DockStyle.Right;
-            this.CLOSE.FlatAppearance.BorderSize = 0;
-            this.CLOSE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CLOSE.Image = global::PABD_Project.Properties.Resources.left_arrow;
-            this.CLOSE.Location = new System.Drawing.Point(780, 0);
-            this.CLOSE.Name = "CLOSE";
-            this.CLOSE.Size = new System.Drawing.Size(168, 80);
-            this.CLOSE.TabIndex = 3;
-            this.CLOSE.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.CLOSE.UseVisualStyleBackColor = true;
-            this.CLOSE.Click += new System.EventHandler(this.CLOSE_Click);
+            this.panelTitleBar.Size = new System.Drawing.Size(862, 80);
+            this.panelTitleBar.TabIndex = 3;
             // 
             // btnClose
             // 
@@ -217,16 +180,36 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // Form2
+            // Title
+            // 
+            this.Title.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Title.AutoSize = true;
+            this.Title.Font = new System.Drawing.Font("Mongolian Baiti", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Title.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Title.Location = new System.Drawing.Point(398, 27);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(99, 30);
+            this.Title.TabIndex = 1;
+            this.Title.Text = "HOME";
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(220, 80);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(862, 478);
+            this.panel1.TabIndex = 4;
+            // 
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 522);
-            this.Controls.Add(this.panelDesktopPane);
+            this.ClientSize = new System.Drawing.Size(1082, 558);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Form3";
+            this.Text = "Form3";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
@@ -239,17 +222,16 @@
         #endregion
 
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Label JUDUL;
-        private System.Windows.Forms.Label Title;
-        private System.Windows.Forms.Panel panelTitleBar;
-        private System.Windows.Forms.Panel panelDesktopPane;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button CLOSE;
+        private System.Windows.Forms.Panel panelTitleBar;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Panel panel1;
     }
 }
