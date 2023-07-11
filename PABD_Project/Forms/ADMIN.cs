@@ -47,35 +47,38 @@ namespace PABD_Project.Forms
 
         private void Add_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            SqlCommand check = new SqlCommand("select ID_petugas from dbo.Petugas Where ID_petugas = " +(textBox1.Text),conn);
-            SqlDataAdapter da = new SqlDataAdapter(check);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count>0)
-            {
-                MessageBox.Show("Data sudah ada", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (string.IsNullOrEmpty(textBox1.Text)|| string.IsNullOrEmpty(textBox2.Text)|| string.IsNullOrEmpty(textBox3.Text)|| string.IsNullOrEmpty(textBox4.Text))
-            {
-                MessageBox.Show("Data tidak lengkap", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("insert into dbo.Petugas (ID_petugas,Nama,No_TLP,Alamat)values(@ID,@nama,@no_tlp,@alamat)", conn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SqlParameter("@ID", textBox1.Text.ToString()));
-                cmd.Parameters.Add(new SqlParameter("@nama", textBox2.Text.ToString()));
-                cmd.Parameters.Add(new SqlParameter("@no_tlp", textBox3.Text.ToString()));
-                cmd.Parameters.Add(new SqlParameter("@alamat", textBox4.Text.ToString()));
-                cmd.ExecuteNonQuery();
 
+                conn.Open();
+                SqlCommand check = new SqlCommand("select ID_petugas from dbo.Petugas Where ID_petugas = '" + (textBox1.Text)+"'", conn);
+                SqlDataAdapter da = new SqlDataAdapter(check);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
                 conn.Close();
-                MessageBox.Show("Data Berhasil ditambahkan");
-                refreshform();
-                Lihatdata();
-            }
+                if (dt.Rows.Count > 0)
+                {
+                    MessageBox.Show("Data sudah ada", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+               else if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text))
+                {
+                    MessageBox.Show("Data tidak lengkap", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("insert into dbo.Petugas (ID_petugas,Nama,No_TLP,Alamat)values(@ID,@nama,@no_tlp,@alamat)", conn);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.Add(new SqlParameter("@ID", textBox1.Text.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("@nama", textBox2.Text.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("@no_tlp", textBox3.Text.ToString()));
+                    cmd.Parameters.Add(new SqlParameter("@alamat", textBox4.Text.ToString()));
+                    cmd.ExecuteNonQuery();
+
+                    conn.Close();
+                    MessageBox.Show("Data Berhasil ditambahkan");
+                    refreshform();
+                    Lihatdata();
+                }
+            
 
         }
 
@@ -99,7 +102,7 @@ namespace PABD_Project.Forms
         private void Delete_Click(object sender, EventArgs e)
         {
             conn.Open();
-            SqlCommand check = new SqlCommand("select ID_petugas from dbo.Petugas Where ID_petugas = " + (textBox1.Text), conn);
+            SqlCommand check = new SqlCommand("select ID_petugas from dbo.Petugas Where ID_petugas = '" + (textBox1.Text)+"'", conn);
             SqlDataAdapter da = new SqlDataAdapter(check);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -110,7 +113,7 @@ namespace PABD_Project.Forms
             }
             else if (textBox1.Text != "")
             {
-                if(MessageBox.Show("Apakah anda yakin ingin menghapus data ini?","Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Open();
                     SqlCommand cmd = new SqlCommand("delete dbo.Petugas where ID_petugas=" + (textBox1.Text) + "", conn);
@@ -125,30 +128,44 @@ namespace PABD_Project.Forms
             {
                 MessageBox.Show("ISI ID_petugas yang akan dihapus");
             }
+
         }
 
         private void Search_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "")
-            {
+            
                 conn.Open();
-                string str = "select * from dbo.Petugas Where ID_petugas = " + (textBox1.Text);
-                SqlDataAdapter da = new SqlDataAdapter(str, conn);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                dataGridView1.DataSource = ds.Tables[0];
+                SqlCommand check = new SqlCommand("select ID_petugas from dbo.Petugas Where ID_petugas = '" + (textBox1.Text)+"'", conn);
+                SqlDataAdapter sda = new SqlDataAdapter(check);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
                 conn.Close();
-                refreshform();
-            }
-            else
-            {
-                MessageBox.Show("ISI ID_petugas yang akan dicari");
-            }
+                if (dt.Rows.Count == 0)
+                {
+                    MessageBox.Show("Data tidak ada", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (textBox1.Text != "")
+                {
+                    conn.Open();
+                    string str = "select * from dbo.Petugas Where ID_petugas = " + (textBox1.Text);
+                    SqlDataAdapter da = new SqlDataAdapter(str, conn);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds);
+                    dataGridView1.DataSource = ds.Tables[0];
+                    conn.Close();
+                    refreshform();
+                }
+                else
+                {
+                    MessageBox.Show("ISI ID_petugas yang akan dicari");
+                }
+
         }
 
         private void Refresh_Click(object sender, EventArgs e)
         {
             Lihatdata();
+            refreshform();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -165,15 +182,22 @@ namespace PABD_Project.Forms
 
         private void Update_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Apakah anda yakin ingin mengupdate data ini?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || string.IsNullOrEmpty(textBox3.Text) || string.IsNullOrEmpty(textBox4.Text))
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("update dbo.Petugas set Nama = '"+textBox2.Text+"',No_TLP = '"+textBox3.Text+"',Alamat='"+textBox4.Text+"'where ID_petugas = " + int.Parse(textBox1.Text), conn);
-                cmd.ExecuteNonQuery();
-                conn.Close();
-                MessageBox.Show("Data Berhasil diupdate");
-                refreshform();
-                Lihatdata();
+                MessageBox.Show("Data tidak lengkap", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Apakah anda yakin ingin mengupdate data ini?", "Update Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("update dbo.Petugas set Nama = '" + textBox2.Text + "',No_TLP = '" + textBox3.Text + "',Alamat='" + textBox4.Text + "'where ID_petugas = " + (textBox1.Text), conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    MessageBox.Show("Data Berhasil diupdate");
+                    refreshform();
+                    Lihatdata();
+                }
             }
         }
     }

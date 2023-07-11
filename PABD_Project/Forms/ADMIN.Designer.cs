@@ -57,7 +57,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Location = new System.Drawing.Point(143, 33);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(141, 22);
             this.textBox1.TabIndex = 0;
             // 
             // textBox2
@@ -66,7 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox2.Location = new System.Drawing.Point(143, 86);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.Size = new System.Drawing.Size(141, 22);
             this.textBox2.TabIndex = 1;
             // 
             // textBox3
@@ -75,7 +75,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox3.Location = new System.Drawing.Point(143, 146);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.Size = new System.Drawing.Size(141, 22);
             this.textBox3.TabIndex = 2;
             // 
             // dataGridView1
@@ -150,7 +150,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox4.Location = new System.Drawing.Point(143, 210);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
+            this.textBox4.Size = new System.Drawing.Size(141, 22);
             this.textBox4.TabIndex = 8;
             // 
             // label1
