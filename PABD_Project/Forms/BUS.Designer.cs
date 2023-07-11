@@ -41,6 +41,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Refresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,9 +85,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 16);
+            this.label1.Size = new System.Drawing.Size(78, 16);
             this.label1.TabIndex = 22;
-            this.label1.Text = "label1";
+            this.label1.Text = "Plat_Nomor";
             // 
             // textBox4
             // 
@@ -139,7 +140,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(339, 44);
+            this.dataGridView1.Location = new System.Drawing.Point(342, 82);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -173,11 +174,24 @@
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 13;
             // 
+            // Refresh
+            // 
+            this.Refresh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Refresh.FlatAppearance.BorderSize = 0;
+            this.Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Refresh.Image = global::PABD_Project.Properties.Resources.refresh;
+            this.Refresh.Location = new System.Drawing.Point(728, 16);
+            this.Refresh.Name = "Refresh";
+            this.Refresh.Size = new System.Drawing.Size(60, 50);
+            this.Refresh.TabIndex = 26;
+            this.Refresh.UseVisualStyleBackColor = true;
+            // 
             // BUS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Refresh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -215,5 +229,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button Refresh;
     }
 }
