@@ -118,7 +118,7 @@ namespace PABD_Project.Forms
                 if (MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("delete dbo.gudang where ID_gudang=" + (textBox1.Text) + "", conn);
+                    SqlCommand cmd = new SqlCommand("delete dbo.gudang where ID_gudang='" + (textBox1.Text) + "'", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Berhasil dihapus");
@@ -128,7 +128,7 @@ namespace PABD_Project.Forms
             }
             else
             {
-                MessageBox.Show("ISI ID_petugas yang akan dihapus");
+                MessageBox.Show("ISI ID_gudang yang akan dihapus");
             }
         }
 
@@ -147,7 +147,7 @@ namespace PABD_Project.Forms
             else if (textBox1.Text != "")
             {
                 conn.Open();
-                string str = "select * from dbo.gudang Where ID_gudang = " + (textBox1.Text);
+                string str = "select * from dbo.gudang Where ID_gudang = '" + (textBox1.Text)+"'";
                 SqlDataAdapter da = new SqlDataAdapter(str, conn);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -157,7 +157,7 @@ namespace PABD_Project.Forms
             }
             else
             {
-                MessageBox.Show("ISI ID_petugas yang akan dicari");
+                MessageBox.Show("ISI ID_gudang yang akan dicari");
             }
         }
 
@@ -185,7 +185,7 @@ namespace PABD_Project.Forms
                 if (MessageBox.Show("Apakah anda yakin ingin mengupdate data ini?", "Update Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("update dbo.gudang set Alamat = '" + textBox2.Text + "',Kapasitas_max = '" + textBox3.Text + "',Nama_satpam='" + textBox4.Text + "',Nama_CS ='"+textBox5.Text+"'where ID_gudang = " + (textBox1.Text), conn);
+                    SqlCommand cmd = new SqlCommand("update dbo.gudang set Alamat = '" + textBox2.Text + "',Kapasitas_max = '" + textBox3.Text + "',Nama_satpam='" + textBox4.Text + "',Nama_CS ='"+textBox5.Text+"'where ID_gudang = '" + (textBox1.Text)+"'", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Berhasil diupdate");

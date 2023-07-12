@@ -116,7 +116,7 @@ namespace PABD_Project.Forms
                 if (MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("delete dbo.Petugas where ID_petugas=" + (textBox1.Text) + "", conn);
+                    SqlCommand cmd = new SqlCommand("delete dbo.Petugas where ID_petugas = '" + (textBox1.Text) + "'", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Berhasil dihapus");
@@ -147,7 +147,7 @@ namespace PABD_Project.Forms
                 else if (textBox1.Text != "")
                 {
                     conn.Open();
-                    string str = "select * from dbo.Petugas Where ID_petugas = " + (textBox1.Text);
+                    string str = "select * from dbo.Petugas Where ID_petugas = '" + (textBox1.Text)+"'";
                     SqlDataAdapter da = new SqlDataAdapter(str, conn);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
@@ -191,7 +191,7 @@ namespace PABD_Project.Forms
                 if (MessageBox.Show("Apakah anda yakin ingin mengupdate data ini?", "Update Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("update dbo.Petugas set Nama = '" + textBox2.Text + "',No_TLP = '" + textBox3.Text + "',Alamat='" + textBox4.Text + "'where ID_petugas = " + (textBox1.Text), conn);
+                    SqlCommand cmd = new SqlCommand("update dbo.Petugas set Nama = '" + textBox2.Text + "',No_TLP = '" + textBox3.Text + "',Alamat='" + textBox4.Text + "'where ID_petugas = '" + (textBox1.Text)+"'", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Berhasil diupdate");

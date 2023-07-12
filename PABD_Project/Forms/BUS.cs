@@ -112,7 +112,7 @@ namespace PABD_Project.Forms
                 if (MessageBox.Show("Apakah anda yakin ingin menghapus data ini?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("delete dbo.Bus where ID_bus=" + (textBox1.Text) + "", conn);
+                    SqlCommand cmd = new SqlCommand("delete dbo.Bus where ID_bus='" + (textBox1.Text) + "'", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Berhasil dihapus");
@@ -141,7 +141,7 @@ namespace PABD_Project.Forms
             else if (textBox1.Text != "")
             {
                 conn.Open();
-                string str = "select * from dbo.Bus Where ID_bus = " + (textBox1.Text).ToString();
+                string str = "select * from dbo.Bus Where ID_bus = '" + (textBox1.Text)+"'";
                 SqlDataAdapter da = new SqlDataAdapter(str, conn);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
@@ -184,7 +184,7 @@ namespace PABD_Project.Forms
                 if (MessageBox.Show("Apakah anda yakin ingin mengupdate data ini?", "Delete Record", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     conn.Open();
-                    SqlCommand cmd = new SqlCommand("update dbo.Bus set Merk_Bus = '" + textBox2.Text + "',Jenis_Bus = '" + comboBox1.Text + "',Jumlah_Bus='" + Convert.ToInt32(textBox4.Text) + "'where ID_bus = " + (textBox1.Text), conn);
+                    SqlCommand cmd = new SqlCommand("update dbo.Bus set Merk_Bus = '" + textBox2.Text + "',Jenis_Bus = '" + comboBox1.Text + "',Jumlah_Bus='" + Convert.ToInt32(textBox4.Text) + "'where ID_bus = '" + (textBox1.Text)+"'", conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     MessageBox.Show("Data Berhasil diupdate");
