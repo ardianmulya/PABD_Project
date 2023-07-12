@@ -173,7 +173,6 @@
             // Refresh
             // 
             this.Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Refresh.FlatAppearance.BorderSize = 0;
             this.Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Refresh.Image = global::PABD_Project.Properties.Resources.refresh;
             this.Refresh.Location = new System.Drawing.Point(728, 16);
